@@ -62,7 +62,7 @@ body {
 
 .hero {
     position: relative;
-    background: url('../images/banner.webp') no-repeat center/cover;
+    background: url('../images/banner.jpg') no-repeat center/cover;
     min-height: 100vh;
     display: flex;
     align-items: center;
