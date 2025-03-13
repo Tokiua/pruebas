@@ -62,11 +62,11 @@ body {
 
 .hero {
     position: relative;
-    background: url('../images/banner.jpg') no-repeat center/cover;
+    background: url('../images/banner.webp') no-repeat center/cover;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-attachment: fixed; /* Efecto parallax */
+    background-attachment: fixed;
 }
 
 .hero .overlay {
@@ -86,14 +86,13 @@ main {
     margin-top: 90px;
 }
 
-/* Carrusel */
 .trends .carousel-item {
     padding: 20px 0;
-    height: 450px; /* Altura fija para el carrusel */
+    height: 450px;
     display: flex;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .trends .carousel-item.active {
@@ -102,8 +101,8 @@ main {
 
 .trends .carousel-item img {
     width: 100%;
-    height: 350px; /* Altura fija para imágenes */
-    object-fit: cover; /* Llena el contenedor, recortando si es necesario */
+    height: 350px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
@@ -114,13 +113,12 @@ main {
     margin-bottom: 10px;
 }
 
-/* Lo Más Pedido y Ofertas */
 .popular .card-img-top,
 .offers .offer-card img {
     width: 100%;
-    height: 300px; /* Altura fija para imágenes */
-    object-fit: cover; /* Llena el contenedor, priorizando imágenes anchas */
-    border-radius: 10px 10px 0 0; /* Solo bordes superiores redondeados */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -166,7 +164,7 @@ main {
 .offer-card {
     position: relative;
     overflow: hidden;
-    height: 400px; /* Contenedor fijo para ofertas */
+    height: 400px;
 }
 
 .offer-text {
@@ -185,7 +183,7 @@ main {
 
 .popular .card {
     height: 100%;
-    min-height: 450px; /* Altura mínima para consistencia */
+    min-height: 450px;
 }
 
 .popular .card-title,
@@ -196,7 +194,7 @@ main {
 
 .brands .brand {
     padding: 20px;
-    height: 200px; /* Contenedor fijo para marcas */
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,7 +202,7 @@ main {
 }
 
 .brands .brand img {
-    max-height: 100px; /* Altura máxima para logos */
+    max-height: 100px;
     height: auto;
     width: auto;
     object-fit: contain;
@@ -243,14 +241,14 @@ footer .social-links .btn-outline-light:hover {
     border-color: #4A90E2;
 }
 
-/* Animaciones */
-.animate__fadeInDown { animation: fadeInDown 1.5s ease-out; }
-.animate__fadeInUp { animation: fadeInUp 1.5s ease-out; }
-.animate__fadeInLeft { animation: fadeInLeft 1.5s ease-out; }
-.animate__fadeInRight { animation: fadeInRight 1.5s ease-out; }
-.animate__zoomIn { animation: zoomIn 1s ease-out; }
-.animate__bounceIn { animation: bounceIn 1.5s ease-out; }
-.animate__slideInLeft { animation: slideInLeft 1.5s ease-out; }
+/* Animaciones optimizadas */
+.animate__fadeInDown { animation: fadeInDown 1s ease-out; }
+.animate__fadeInUp { animation: fadeInUp 1s ease-out; }
+.animate__fadeInLeft { animation: fadeInLeft 1s ease-out; }
+.animate__fadeInRight { animation: fadeInRight 1s ease-out; }
+.animate__zoomIn { animation: zoomIn 0.8s ease-out; }
+.animate__bounceIn { animation: bounceIn 1s ease-out; }
+.animate__slideInLeft { animation: slideInLeft 1s ease-out; }
 
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-50px); }
@@ -287,4 +285,12 @@ footer .social-links .btn-outline-light:hover {
 @keyframes slideInLeft {
     from { opacity: 0; transform: translateX(-100%); }
     to { opacity: 1; transform: translateX(0); }
+}
+
+/* Desactivar animaciones en móviles */
+@media (max-width: 768px) {
+    .animate__fadeIn, .animate__zoomIn, .animate__slideInLeft, 
+    .animate__fadeInUp, .animate__fadeInDown, .animate__bounceIn {
+        animation: none;
+    }
 }
